@@ -1,0 +1,29 @@
+{
+  "name": "search-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcvenk/storeFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcvenk/storeFinder/issues"
+  },
+  "homepage": "https://github.com/pcvenk/storeFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.6",
+    "method-override": "^2.3.8",
+    "node-geocoder": "^3.16.0",
+    "redis": "^2.7.1"
+  }
+}
