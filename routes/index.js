@@ -1,6 +1,7 @@
-const express = require('express');
-const router  = express.Router();
+const express  = require('express');
+const router   = express.Router();
 const geoCoder = require('node-geocoder');
+const client   = require('../redis-client/client');
 
 //nodegeocoder
 const options = {
@@ -30,14 +31,23 @@ router.post('/store/add', (req, res) => {
     const loc = req.body.location;
 
     geocoder.geocode(loc)
-        .then((res) => {
+        .then((response) => {
             const store = {
-                lat: res[0].latitude,
-                lng: res[0].longitude,
-                address: res[0].formattedAddress
+                lat: response[0].latitude,
+                lng: response[0].longitude,
+                address: response[0].formattedAddress
             };
 
-            console.log(store);
+            // console.log(store);
+            //saving to redis
+            client.hmset(id, ['lat', store.lat, 'lng', store.lng, 'address', store.address], (err, reply) => {
+                if(err){
+                    console.log(err);
+                } else {
+                    console.log(reply);
+                    res.redirect('/');
+                }
+            });
 
         })
         .catch((err) => {
