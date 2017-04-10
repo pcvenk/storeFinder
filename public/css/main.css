@@ -9,7 +9,7 @@ body {
     background: white;
     padding: 20px;
     width: 70%;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .links {
@@ -31,4 +31,12 @@ a:hover {
 
 span {
     color: #f0ad4e;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 35px;
+    color: white;
+    letter-spacing: 1.8px;
+
 }
