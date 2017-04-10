@@ -22,9 +22,13 @@ body {
 }
 
 a {
-    color: #f0ad4e;;
+    color: #f0ad4e;
 }
 
 a:hover {
     color: rgba(240,173,78,0.7);
+}
+
+span {
+    color: #f0ad4e;
 }
