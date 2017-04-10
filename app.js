@@ -9,6 +9,8 @@ const express        = require('express'),
       methodOverride = require('method-override'),
       path           = require('path');
 
+const index = require('./routes/index');
+
 
 const port = 3000;
 
@@ -25,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //methodOverride
 app.use(methodOverride('_method'));
+
+//routes
+app.use('/', index);
 
 //server listening
 app.listen(port, () => console.log('Server started on port: ' +port));
