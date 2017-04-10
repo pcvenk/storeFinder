@@ -15,4 +15,5 @@ body {
 
 .clear {
     clear: both;
+    padding: 40px;
 }
