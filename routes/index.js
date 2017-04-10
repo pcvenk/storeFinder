@@ -31,8 +31,14 @@ router.post('/store/add', (req, res) => {
 
     geocoder.geocode(loc)
         .then((res) => {
-            console.log(res);
-            return;
+            const store = {
+                lat: res[0].latitude,
+                lng: res[0].longitude,
+                address: res[0].formattedAddress
+            };
+
+            console.log(store);
+
         })
         .catch((err) => {
             console.log(err);

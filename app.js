@@ -6,7 +6,10 @@ const express        = require('express'),
       bodyParser     = require('body-parser'),
       redis          = require('redis'),
       methodOverride = require('method-override'),
-      path           = require('path');
+      path           = require('path'),
+      client         = require('./redis-client/client');
+
+
 
 const index = require('./routes/index');
 const port = 3000;
@@ -30,4 +33,8 @@ app.use(methodOverride('_method'));
 app.use('/', index);
 
 //server listening
-app.listen(port, () => console.log('Server started on port: ' +port));
+app.listen(port, () => {
+    client;
+    console.log('Server started on port: ' +port)
+
+});
