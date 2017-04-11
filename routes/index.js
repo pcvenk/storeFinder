@@ -57,7 +57,7 @@ router.post('/store/add', (req, res) => {
 });
 
 //Search store
-router.post('/store/search', (req, res) => {
+router.post('/', (req, res) => {
     const id = req.body.id;
 
     client.hgetall(id, (err, store) => {

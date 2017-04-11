@@ -1,7 +1,8 @@
-<form action="/store/search" method="POST">
+<form action="/" method="POST">
     <div>
         <label for="store-id">Store ID:</label>
         <input type="text" class="form-control" id="store-id" name="id">
+        {{#if error}}<div>{{error}}</div>{{/if}}
     </div>
     <br>
     <button class="btn btn-outline-warning btn-block" type="submit">Search</button>
