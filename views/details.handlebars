@@ -145,7 +145,11 @@
 <br>
 <br>
 <h3>Store ID: {{store.id}}</h3>
-<p>Address: <strong>{{store.address}}</strong></p>
+<p>Street Name: <strong>{{store.streetName}}</strong></p>
+<p>Street Number: <strong>{{store.streetNumber}}</strong></p>
+<p>Zipcode: <strong>{{store.zipcode}}</strong></p>
+<p>Country: <strong>{{store.country}}</strong></p>
+
 <form action="/store/delete/{{store.id}}?_method=DELETE" method="POST">
     <button id="delete-store" type="submit" class="btn btn-sm btn-outline-danger">Delete
         Company</button>

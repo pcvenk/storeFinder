@@ -35,12 +35,18 @@ router.post('/store/add', (req, res) => {
             const store = {
                 lat: response[0].latitude,
                 lng: response[0].longitude,
-                address: response[0].formattedAddress
+                address: response[0].formattedAddress,
+                streetName: response[0].streetName,
+                streetNumber: response[0].streetNumber,
+                country: response[0].country,
+                zipcode: response[0].zipcode
             };
+
+            console.log(store);
 
             // console.log(store);
             //saving to redis
-            client.hmset(id, ['lat', store.lat, 'lng', store.lng, 'address', store.address], (err, reply) => {
+            client.hmset(id, ['lat', store.lat, 'lng', store.lng, 'address', store.address, 'streetName', store.streetName, 'streetNumber', store.streetNumber, 'country', store.country, 'zipcode', store.zipcode], (err, reply) => {
                 if(err){
                     console.log(err);
                 } else {
@@ -68,6 +74,12 @@ router.post('/', (req, res) => {
             res.render('details', {store: store});
         }
     })
+});
+
+//Delete route
+router.delete('/store/delete/:id', (req, res) => {
+    client.del(req.params.id);
+    res.redirect('/');
 });
 
 
