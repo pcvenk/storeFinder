@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
         if(!store){
             res.render('search-store', {error: "Invalid store ID"});
         } else {
-            obj.id = id;
+            store.id = id;
             res.render('details', {store: store});
         }
     })
