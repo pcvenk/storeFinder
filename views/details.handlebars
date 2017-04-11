@@ -146,6 +146,10 @@
 <br>
 <h3>Store ID: {{store.id}}</h3>
 <p>Address: <strong>{{store.address}}</strong></p>
+<form action="/store/delete/{{store.id}}?_method=DELETE" method="POST">
+    <button id="delete-store" type="submit" class="btn btn-sm btn-outline-danger">Delete
+        Company</button>
+</form>
 
 <div id="map"></div>
 
