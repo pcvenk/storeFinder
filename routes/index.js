@@ -56,5 +56,19 @@ router.post('/store/add', (req, res) => {
         });
 });
 
+//Search store
+router.post('/store/search', (req, res) => {
+    const id = req.body.id;
+
+    client.hgetall(id, (err, store) => {
+        if(!store){
+            res.render('search-store', {error: "Invalid store ID"});
+        } else {
+            obj.id = id;
+            res.render('details', {store: store});
+        }
+    })
+});
+
 
 module.exports = router;
