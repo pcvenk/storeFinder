@@ -1,9 +1,30 @@
+<script>
+    function initMap(){
+        const lat = {{store.lat}};
+        const lng = {{store.lng}};
+        const myLatLng = {lat:lat, lng:lng};
+
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: myLatLng,
+            scrollwheel: false
+        });
+
+        const marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map
+        });
+
+    }
+</script>
+
 <a href="/"><< Go back</a>
 <br>
 <br>
 <h3>Store ID: {{store.id}}</h3>
-<p>Address: {{store.address}}</p>
+<p>Address: <strong>{{store.address}}</strong></p>
 
 <div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpSetsRxT4QXc6FTJffCRWdC3rb4zWErc&callback=initMap"
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtV3Gm0chOW8qqYICx4GSVPaCpCptSmAA&callback=initMap"
         async defer></script>
